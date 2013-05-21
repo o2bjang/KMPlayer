@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KM Player</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp">
+<div ng-controller ="KMPlayerCtrl">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <input type="text" ng-model="songselect" class="input-medium">
+      <table border="0">
+          <tr>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(1);">1</button>
+            </td>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(2);">2</button>
+            </td>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(3);"">3</button>
+            </td>
+            <td>
+              <button ng-model="songOrder1" class="btn btn-large"ng-click="addsong(1);">A</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(4);">4</button>
+            </td>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(5);"">5</button>
+            </td>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(6);">6</button>
+            </td>
+            <td>
+             <button ng-model="songOrder2" class="btn btn-large"ng-click="addsong(2);">B</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(7);" >7</button>
+            </td>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(8);">8</button>
+            </td>
+            <td>
+              <button ng-model="digit" class="btn btn-large" ng-click="digitAdd(9);">9</button>
+            </td>
+            <td>
+             <button ng-model="songOrder3" class="btn btn-large"ng-click="addsong(3);">C</button>
+            </td>
+          </tr>
+          <tr>
+            <td><button ng-model="digit" class="btn btn-large" ng-click="digitAdd(0);">0</button>
+            </td>
+            <td>
+              <button ng-model="digitPound" class="btn btn-success btn-medium" ng-click="canPlaySong();"><i class="icon-play icon-white"></i></button>
+            </td>
+            <td>
+              <button ng-model="digitStar" class="btn btn-danger btn-medium" ng-click="stopSong();"><i class="icon-stop icon-white"></i></button>
+            </td>
+            <td>
+              <button ng-model="digitStar" class="btn btn-warning btn-medium" ng-click="canProgram();"><i class="icon-plus icon-white"></i></button>
+            </td>
+          </tr>        
+      </table>
+    <ul class="unstyled">
+      <li ng-repeat="song in songs">
+        <span>{{song.songid}} : {{song.songnumber}}</span>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
+<div ng-controller="KMPlaySongCtrl">
+<audio id="audio-tag" autoplay src="{{song.songpath}}" type="audio/mpeg" />
+</div>
+</div>
+</body>
+</html>

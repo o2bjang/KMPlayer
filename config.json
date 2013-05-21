@@ -1,0 +1,24 @@
+{
+	"name": "KMPlayer",
+	"description": "Kingdom Music Player App",
+	"author": "russell.kelly@gmail.com",
+	"version": "0.1",
+	"platform_version": "v1.4",
+	"modules": {
+		"file": true,
+		"is": true,
+		"logging": {
+			"level": "DEBUG"
+		},
+		"media": {
+			"enable_background_audio": true
+		},
+		"parameters": {},
+		"prefs": true,
+		"reload": true,
+		"tools": true,
+		"topbar": true
+	},
+	"plugins": {},
+	"config_version": "2"
+}
